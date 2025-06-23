@@ -17,6 +17,10 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.redirect(process.env.FRONTEND_URL);
+});
+
 // ✅ Middleware
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
